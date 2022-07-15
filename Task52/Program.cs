@@ -10,7 +10,8 @@ int m = 3;
 int n = 4;
 int[,] matrix = new int[m, n];
 double[] math=new double[n];
-int sum =0;
+Console.WriteLine("Исходный массив: ");
+Console.WriteLine();
 for (int i = 0; i < matrix.GetLength(0); i++)
 {
       for (int j = 0; j < matrix.GetLength(1); j++)
@@ -21,19 +22,18 @@ for (int i = 0; i < matrix.GetLength(0); i++)
       Console.WriteLine();
 
 }
-Console.WriteLine();
 for(int i=0;i<math.Length;i++)
 {
       for(int j=0;j<m;j++)
       {
-            Console.Write(matrix[j, i] + " ");
-            sum=sum+matrix[j, i];
+            math[i]=math[i]+matrix[j, i];
       }
-      Console.WriteLine();
 }
 Console.WriteLine();
-for(int i=0;i<math.Length-1;i++)
+Console.WriteLine("Среднее арифметическое каждого столбца массива: ");
+Console.WriteLine();
+for(int i=0;i<math.Length;i++)
 {
-      math[i]=sum/3;
-      Console.WriteLine(math[i]);
+      math[i]=math[i]/3;
+      Console.Write(math[i]+" ");
 }
